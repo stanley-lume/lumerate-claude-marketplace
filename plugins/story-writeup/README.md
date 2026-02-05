@@ -3,7 +3,9 @@
 Interactive story writeup with template selection and Linear integration.
 
 ## Usage
-
+Just tell claude to "create a story" or "write a story" or "create a linear issue", e.t.c.
+OR
+you can manually call the skill as such:
 ```bash
 /lumerate:story
 ```
