@@ -1,0 +1,19 @@
+{
+  "name": "lumerate",
+  "owner": {
+    "name": "Lumerate",
+    "email": "dev@lumerate.com"
+  },
+  "metadata": {
+    "description": "Internal Lumerate tools and workflows for Claude Code",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "story-writeup",
+      "source": "./plugins/story-writeup",
+      "description": "Interactive story writeup following templates, with Linear integration",
+      "version": "1.0.0"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "story-writeup",
+  "description": "Interactive story writeup with template selection and Linear integration",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lumerate"
+  }
+}
