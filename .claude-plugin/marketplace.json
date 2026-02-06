@@ -10,8 +10,8 @@
   },
   "plugins": [
     {
-      "name": "scribe",
-      "source": "./plugins/scribe",
+      "name": "lume-scribe",
+      "source": "./plugins/lume-scribe",
       "description": "Documentation, planning, and artifact authoring tools",
       "version": "1.0.0"
     }

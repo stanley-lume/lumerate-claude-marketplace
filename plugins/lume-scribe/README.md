@@ -1,19 +1,19 @@
-# Scribe
+# Lume Scribe
 
 Documentation, planning, and artifact authoring tools.
 
 ## Skills
 
-### story
+### craft-story
 
-Interactive story writeup with template selection and Linear integration.
+Collaboratively craft stories, tickets, and issues with template selection and Linear integration.
 
 ## Usage
-Just tell claude to "create a story" or "write a story" or "create a linear issue", e.t.c.
+Just tell claude to "create a story" or "write a story" or "create a linear issue", etc.
 OR
 you can manually call the skill as such:
 ```bash
-/scribe:story
+/lume-scribe:craft-story
 ```
 
 This will guide you through:
