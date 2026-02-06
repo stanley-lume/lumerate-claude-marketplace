@@ -13,19 +13,19 @@ Internal Lumerate tools and workflows for Claude Code.
 ### Install Plugins
 
 ```bash
-# Install the scribe plugin
-/plugin install scribe@lumerate
+# Install the lume-scribe plugin
+/plugin install lume-scribe@lumerate
 ```
 
 ## Available Plugins
 
-### scribe
+### lume-scribe
 Documentation, planning, and artifact authoring tools.
 
 **Skills:**
-- `/scribe:story` - Interactive story writeup with template selection and Linear integration
+- `/lume-scribe:craft-story` - Interactive story writeup with template selection and Linear integration
 
-See [plugins/scribe/README.md](plugins/scribe/README.md) for detailed documentation.
+See [plugins/lume-scribe/README.md](plugins/lume-scribe/README.md) for detailed documentation.
 
 ## Directory Structure
 
@@ -35,17 +35,16 @@ lumerate-claude-marketplace/
 │   └── marketplace.json      # Marketplace manifest
 ├── README.md                  # This file
 └── plugins/
-    └── scribe/               # Scribe plugin
+    └── lume-scribe/           # Lume Scribe plugin
         ├── .claude-plugin/
         │   └── plugin.json   # Plugin manifest
         ├── skills/
-        │   └── story/
-        │       └── SKILL.md  # Story writeup skill
-        ├── prompts/
-        │   └── generation.md  # Story generation instructions
-        ├── scripts/
-        │   └── list_templates.py  # Template discovery
-        ├── templates/         # Shared templates (supports subdirs)
+        │   └── craft-story/
+        │       ├── SKILL.md           # Skill definition
+        │       ├── generation.md      # Story generation instructions
+        │       ├── scripts/
+        │       │   └── list_templates.py  # Template discovery
+        │       └── templates/         # Shared templates (supports subdirs)
         └── README.md          # Plugin docs
 ```
 
