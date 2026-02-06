@@ -39,6 +39,8 @@ Your first job is to generate *only* the populated template.
      * You **must not** add, remove, or paraphrase the user's core requirements.
      * You **must not** add *any* information, requirements, or content not explicitly provided by the user.
 
+   * **Say It Once, Say It Well:** The reader is an implementer who wants to understand, build, and move on as fast as possible. Default to stating things once — but if restating something in another section genuinely helps the reader's understanding, that's fine. The test is simple: does this repetition help the implementer, or is it just filling out the template? Every sentence should earn its place.
+
    * **Handle Missing Content:** If the user's input provides no content for a specific template section (and it's not critical), still include that section's heading and leave its content blank. Do not infer or write content for blank sections.
 
    * **Output Format:**
