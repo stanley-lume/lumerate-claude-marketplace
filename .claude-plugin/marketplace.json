@@ -10,9 +10,9 @@
   },
   "plugins": [
     {
-      "name": "story-writeup",
-      "source": "./plugins/story-writeup",
-      "description": "Interactive story writeup following templates, with Linear integration",
+      "name": "scribe",
+      "source": "./plugins/scribe",
+      "description": "Documentation, planning, and artifact authoring tools",
       "version": "1.0.0"
     }
   ]

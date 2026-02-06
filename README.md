@@ -13,27 +13,19 @@ Internal Lumerate tools and workflows for Claude Code.
 ### Install Plugins
 
 ```bash
-# Install the story writeup plugin
-/plugin install story-writeup@lumerate
+# Install the scribe plugin
+/plugin install scribe@lumerate
 ```
 
 ## Available Plugins
 
-### story-writeup
-Interactive story writeup with template selection and Linear integration.
+### scribe
+Documentation, planning, and artifact authoring tools.
 
-**Usage:**
-```bash
-/lumerate:story
-```
+**Skills:**
+- `/scribe:story` - Interactive story writeup with template selection and Linear integration
 
-**Features:**
-- Template selection from shared and personal templates
-- Custom template support with save functionality
-- Context-driven story generation
-- Linear issue creation (requires Linear plugin)
-
-See [plugins/story-writeup/README.md](plugins/story-writeup/README.md) for detailed documentation.
+See [plugins/scribe/README.md](plugins/scribe/README.md) for detailed documentation.
 
 ## Directory Structure
 
@@ -43,16 +35,18 @@ lumerate-claude-marketplace/
 │   └── marketplace.json      # Marketplace manifest
 ├── README.md                  # This file
 └── plugins/
-    └── story-writeup/        # Story writeup plugin
+    └── scribe/               # Scribe plugin
         ├── .claude-plugin/
         │   └── plugin.json   # Plugin manifest
         ├── skills/
         │   └── story/
-        │       ├── SKILL.md  # Flow logic
-        │       └── prompts/
-        │           └── generation.md  # Story generation instructions
-        ├── templates/        # Shared templates
-        └── README.md         # Plugin docs
+        │       └── SKILL.md  # Story writeup skill
+        ├── prompts/
+        │   └── generation.md  # Story generation instructions
+        ├── scripts/
+        │   └── list_templates.py  # Template discovery
+        ├── templates/         # Shared templates (supports subdirs)
+        └── README.md          # Plugin docs
 ```
 
 ## Contributing

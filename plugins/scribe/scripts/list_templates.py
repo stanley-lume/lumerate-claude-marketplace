@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """Lists available story templates with their metadata.
 
+Searches for templates in:
+  - <plugin_root>/templates/  (shared, plugin-bundled)
+  - ~/.claude/lumerate/story-templates/  (personal)
+
 Output format: source|path|name|description
 """
 
-import os
 import re
 from pathlib import Path
 
@@ -43,7 +46,7 @@ def find_templates(directory: Path, source: str) -> list[str]:
     """Find all .md templates in a directory recursively."""
     results = []
     if directory.exists():
-        for md_file in directory.rglob("*.md"):
+        for md_file in sorted(directory.rglob("*.md")):
             line = extract_frontmatter(md_file, source)
             if line:
                 results.append(line)
@@ -51,11 +54,8 @@ def find_templates(directory: Path, source: str) -> list[str]:
 
 
 def main():
-    # Plugin templates: relative to this script's location
-    script_dir = Path(__file__).parent
-    plugin_templates = script_dir.parent / "templates"
-
-    # User templates
+    plugin_root = Path(__file__).resolve().parent.parent
+    plugin_templates = plugin_root / "templates"
     user_templates = Path.home() / ".claude" / "lumerate" / "story-templates"
 
     # Find and output templates (user first, then plugin defaults)

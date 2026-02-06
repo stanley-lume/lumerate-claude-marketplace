@@ -1,11 +1,15 @@
-# Story Writeup Plugin
+# Scribe
+
+Documentation, planning, and artifact authoring tools.
+
+## Skills
+
+### story
 
 Interactive story writeup with template selection and Linear integration.
 
-## Usage
-
 ```bash
-/lumerate:story
+/scribe:story
 ```
 
 This will guide you through:

@@ -7,25 +7,27 @@ description: Use when the user wants to write a story, create a ticket, convert 
 
 You are an interactive story writeup assistant. Guide users through creating well-structured stories using templates, with optional Linear integration.
 
+**IMPORTANT: You MUST follow the steps below exactly. Do NOT search for or glob for template files yourself. Use the provided script to discover templates.**
+
 ## Behavior Flow
 
 ### Step 1: Template Selection
 
-Run this script from this file's directory:
+You MUST use the Bash tool to run this script. Do NOT use Glob, Read, or any other tool to find templates:
 ```bash
-python ./scripts/list_templates.py
+python "${CLAUDE_PLUGIN_ROOT}/scripts/list_templates.py"
 ```
 
-Output format: `source|path|name|description`
+The output is one line per template: `source|path|name|description`
 
-Use `AskUserQuestion` to let the user select a template:
-- Build options from the script output using format: `{name} - {description}`
-- Include an option for "Custom template (I'll provide my own)"
+Then, use `AskUserQuestion` to let the user select a template:
+- Build one option per template using: label=`{name}`, description=`{description}`
+- Add a final option: label="Custom", description="I'll provide my own template"
 
 ### Step 2: Handle Template Selection
 
 **If user selects an existing template:**
-- Read the full template file
+- Read the full template file using the `path` from the script output
 - Extract the template body (everything after the frontmatter)
 - Proceed to Step 3
 
@@ -52,7 +54,7 @@ Gather all necessary information to fill out the template sections.
 
 ### Step 4: Story Generation
 
-**Read and follow the detailed instructions in [prompts/generation.md](prompts/generation.md).**
+**Read and follow the detailed instructions in `${CLAUDE_PLUGIN_ROOT}/prompts/generation.md`.**
 
 Generate the story following those instructions, using:
 - The selected template structure
@@ -79,8 +81,9 @@ After the story is finalized, ask: "Would you like to create a Linear issue with
 
 ## Tools Reference
 
-- Use `Bash` to run `python ./scripts/list_templates.py` for template listing
+- Use `Bash` to run `python "${CLAUDE_PLUGIN_ROOT}/scripts/list_templates.py"` for template listing
 - Use `AskUserQuestion` for selections and questions throughout the flow
-- Use `Read` to read the selected template file
+- Use `Read` to read the selected template file (use the absolute path from script output)
+- Use `Read` to read `${CLAUDE_PLUGIN_ROOT}/prompts/generation.md` for generation instructions
 - Use `Write` to save custom templates or story output to files
 - Use Linear MCP tools for issue creation when available
